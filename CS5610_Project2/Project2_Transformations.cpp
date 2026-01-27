@@ -1,3 +1,9 @@
+/// Name: YiChong Chen
+/// Date: 26 Jan 2025
+/// This is a program can generate a Utah teapot in vertex version 
+/// Allow to use left mouse bottom to zoom and right mouse bottom to zoom
+/// Allow use key a to rerendering the scene
+
 #include <GL/glew.h>
 #include <GL/freeglut.h>
 #include <iostream>
@@ -82,8 +88,12 @@ void myIdle()
     glutPostRedisplay();
 }
 
+/// <summary>
+/// center point calculation
+/// </summary>
 void center()
 {
+    // create the to vector store the furthest and closest point
     cy::Vec3f min = mesh.V(0);
     cy::Vec3f max = mesh.V(0);
 
@@ -91,6 +101,7 @@ void center()
     {
         cy::Vec3f v = mesh.V(i);
 
+        // campare the point in every single loop to find the extreme point
         if (min.x < v.x)
             min.x = v.x;
         if (min.y < v.y)
@@ -106,12 +117,14 @@ void center()
         
     }
 
+    // calculate the center point of the object
     objCenter = (min + max) / 2;
 }
 
 /// <summary>
 /// Handle Keybaord
 /// ESC - Exit the program or close the window
+/// A - Rerendering the scene
 /// </summary>
 /// <param name="key"> </param>
 /// <param name="x"> </param>
@@ -173,9 +186,7 @@ void MouseMotion(int x, int y)
     }
 
     if (rightDown) {
-
         posZ += (float)dy;
-
     }
 
     // recoding the last cordinate which help to track future movement
