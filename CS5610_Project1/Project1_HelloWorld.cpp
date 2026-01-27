@@ -45,7 +45,7 @@ void myIdle()
     colorchange(colorG, b_colorG);
     colorchange(colorB, b_colorB);
     //Tell GLUT to redraw
-    glutPostRedisplay(); 
+    glutPostRedisplay();
 }
 
 /// <summary>
@@ -85,7 +85,7 @@ void colorchange(float& color, bool& b_color)
 void Keyboard(unsigned char key, int x, int y)
 {
     // ESC is key27 
-    if (key == 27) 
+    if (key == 27)
     {
         // Close the window
         glutLeaveMainLoop();
@@ -99,7 +99,7 @@ int main(int argc, char** argv)
     glutInit(&argc, argv);
 
     // set window size
-    glutInitWindowSize(1920,1080);
+    glutInitWindowSize(1920, 1080);
     // set window position
     glutInitWindowPosition(100, 100);
 
@@ -117,7 +117,7 @@ int main(int argc, char** argv)
     glutKeyboardFunc(Keyboard);
     // handle redrawing
     glutReshapeFunc(Reshape);
-    
+
 
     // Explicitly set viewport once at startup too (in case reshape isn't called immediately)
     glViewport(0, 0, 1920, 1080);
