@@ -250,7 +250,7 @@ int main(int argc, char** argv)
     glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
 
     // set window title
-    glutCreateWindow("Project2");
+    glutCreateWindow("Project3_Shading");
 
     // initialize GLEW to load OpenGL function pointers
     GLenum err = glewInit();
