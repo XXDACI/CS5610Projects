@@ -1,5 +1,5 @@
 /// Name: YiChong Chen
-/// Date: 26 Jan 2025
+/// Date: 26 Jan 2026
 /// This is a program can generate a Utah teapot in vertex version 
 /// Allow to use left mouse bottom to zoom and right mouse bottom to zoom
 /// Allow use key a to rerendering the scene
@@ -22,9 +22,9 @@ int num_vertices = mesh.NV();
 // the model-view-projection matrix
 cy::Matrix4f mvp;
 // transform vector which using in matrix
-float rotX = 0;
-float rotY = 0;
-float posZ = -100;
+float modelRotX = 0;
+float modelRotY = 0;
+float modelPosZ = -100;
 
 // center point
 cy::Vec3f objCenter(0, 0, 0);
@@ -63,14 +63,14 @@ void myIdle()
     float FOV_Rad = FOV_Deg * (3.1415926 / 180.0);
 
     // calculate rotate angle
-    float rx = rotX * (3.14159 / 180.0f);
-    float ry = rotY * (3.14159 / 180.0f);
+    float rx = modelRotX * (3.14159 / 180.0f);
+    float ry = modelRotY * (3.14159 / 180.0f);
 
     // calculate the distance which object move
-    cy::Vec3f transVector = cy::Vec3f(0, 0, posZ);
+    cy::Vec3f transVector = cy::Vec3f(0, 0, modelPosZ);
 
     // rotation matrix
-    cy::Matrix3f rotMatrix = cy::Matrix3f::RotationXYZ(rotY, rotX, 0); 
+    cy::Matrix3f rotMatrix = cy::Matrix3f::RotationXYZ(modelRotY, modelRotX, 0); 
     // perspective matrix
     cy::Matrix4f projMatrix = cy::Matrix4f::Perspective(FOV_Rad, float(1920) / float(1080), 0.1, 1000.0f);
     // translation matrix
@@ -102,17 +102,17 @@ void center()
         cy::Vec3f v = mesh.V(i);
 
         // campare the point in every single loop to find the extreme point
-        if (min.x < v.x)
+        if (min.x > v.x)
             min.x = v.x;
-        if (min.y < v.y)
+        if (min.y > v.y)
             min.y = v.y;
-        if (min.z < v.z)
+        if (min.z > v.z)
             min.z = v.z;
-        if (max.x > v.x)
+        if (max.x < v.x)
             max.x = v.x;
-        if (max.y > v.y)
+        if (max.y < v.y)
             max.y = v.y;
-        if (max.z > v.z)
+        if (max.z < v.z)
             max.z = v.z;
         
     }
@@ -180,13 +180,13 @@ void MouseMotion(int x, int y)
 
     if (leftDown) {
         // x-axis left and right
-        rotX += (float)dx * 0.02;
+        modelRotX += (float)dx * 0.02;
         // y-axis up and down
-        rotY += (float)dy * 0.02;
+        modelRotY += (float)dy * 0.02;
     }
 
     if (rightDown) {
-        posZ += (float)dy;
+        modelPosZ += (float)dy;
     }
 
     // recoding the last cordinate which help to track future movement

@@ -20,68 +20,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\cyCore.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\cyTriMesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Downloads\cyVector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyAlphaDistribution.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyBVH.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyColor.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyCore.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyGL.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyHairFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyHeap.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyIVector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyLightingGrid.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyMatrix.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyPointCloud.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyPolynomial.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyQuat.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cySampleElim.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyTimer.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyTriMesh.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="cyVector.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="shader.frag" />
     <None Include="shader.vert" />
   </ItemGroup>

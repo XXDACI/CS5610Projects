@@ -93,6 +93,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Common\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -113,6 +114,7 @@ copy "C:\library\glew-2.3.1\bin\Release\$(Platform)\glew32.dll" "$(OutDir)"</Com
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Common\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -131,6 +133,7 @@ copy "C:\library\glew-2.3.1\bin\Release\$(Platform)\glew32.dll" "$(OutDir)"</Com
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Common\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,6 +154,7 @@ copy "C:\library\glew-2.3.1\bin\Release\$(Platform)\glew32.dll" "$(OutDir)"</Com
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(SolutionDir)Common\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -164,28 +168,6 @@ copy "C:\library\glew-2.3.1\bin\Release\$(Platform)\glew32.dll" "$(OutDir)"</Com
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Project2_Transformations.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\..\..\Downloads\cyCore.h" />
-    <ClInclude Include="..\..\..\..\Downloads\cyTriMesh.h" />
-    <ClInclude Include="..\..\..\..\Downloads\cyVector.h" />
-    <ClInclude Include="cyAlphaDistribution.h" />
-    <ClInclude Include="cyBVH.h" />
-    <ClInclude Include="cyColor.h" />
-    <ClInclude Include="cyCore.h" />
-    <ClInclude Include="cyGL.h" />
-    <ClInclude Include="cyHairFile.h" />
-    <ClInclude Include="cyHeap.h" />
-    <ClInclude Include="cyIVector.h" />
-    <ClInclude Include="cyLightingGrid.h" />
-    <ClInclude Include="cyMatrix.h" />
-    <ClInclude Include="cyPointCloud.h" />
-    <ClInclude Include="cyPolynomial.h" />
-    <ClInclude Include="cyQuat.h" />
-    <ClInclude Include="cySampleElim.h" />
-    <ClInclude Include="cyTimer.h" />
-    <ClInclude Include="cyTriMesh.h" />
-    <ClInclude Include="cyVector.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shader.frag" />

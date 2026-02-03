@@ -1,5 +1,5 @@
 /// Name: YiChong Chen
-/// Date: 18 Jan 2025
+/// Date: 18 Jan 2026
 /// This is a program can generate a window called Hello World 
 /// Also has color switch animation
 
