@@ -17,7 +17,7 @@ cy::GLSLProgram prog;
 cy::TriMesh mesh;
 bool success = mesh.LoadFromFileObj("teapot.obj");
 // total number of the vertex
-int num_vertices = mesh.NV();
+int num_face = mesh.NV();
 
 // the model-view-projection matrix
 cy::Matrix4f mvp;
@@ -42,7 +42,7 @@ void Display()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     
     // draw the teapot
-    glDrawArrays(GL_POINTS, 0, num_vertices);
+    glDrawArrays(GL_POINTS, 0, num_face);
     glutSwapBuffers();
 }
 

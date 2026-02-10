@@ -18,7 +18,7 @@ cy::GLSLProgram prog;
 cy::TriMesh mesh;
 bool success = mesh.LoadFromFileObj("teapot.obj");
 // total number of the vertex
-int num_vertices = mesh.NV();
+int num_face = mesh.NV();
 
 // transform vector which using in matrix
 float modelRotX = 0;
