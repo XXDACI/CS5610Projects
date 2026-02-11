@@ -269,35 +269,37 @@ int main(int argc, char** argv)
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
 
-    // position face Array
-    std::vector<cy::Vec3f> positionArray(num_face);
-    // normal face Array
-    std::vector<cy::Vec3f> normalArray(num_face);
-    // st face Array
-    std::vector<cy::Vec3f> stArray(num_face);
-    for (int i = 0; i < mesh.NF(); i++) 
+    // get all vertex data and put in an array
+    std::vector<cy::Vec3f> positionArray;
+
+    for (int i = 0; i < mesh.NF(); i++)
     {
-        // position Face
-        cyTriMesh::TriFace positionFace = mesh.F(i);
-        positionArray[i * 3 + 0] = mesh.V(positionFace.v[0]);
-        positionArray[i * 3 + 1] = mesh.V(positionFace.v[1]);
-        positionArray[i * 3 + 2] = mesh.V(positionFace.v[2]);
+        auto vFace = mesh.F(i);
+        positionArray.push_back(mesh.V(vFace.v[0]));
+        positionArray.push_back(mesh.V(vFace.v[1]));
+        positionArray.push_back(mesh.V(vFace.v[2]));
     }
-    for (int i = 0; i < mesh.NF(); i++) 
+
+    // get all normal data and put in an array
+    std::vector<cy::Vec3f> normalArray;
+
+    for (int i = 0; i < mesh.NF(); i++)
     {
-        // Normal Face
-        cyTriMesh::TriFace normalFace = mesh.FN(i);
-        normalArray[i * 3 + 0] = mesh.VN(normalFace.v[0]);
-        normalArray[i * 3 + 1] = mesh.VN(normalFace.v[1]);
-        normalArray[i * 3 + 2] = mesh.VN(normalFace.v[2]);
+        auto nFace = mesh.FN(i);
+        normalArray.push_back(mesh.VN(nFace.v[0]));
+        normalArray.push_back(mesh.VN(nFace.v[1]));
+        normalArray.push_back(mesh.VN(nFace.v[2]));
     }
+
+    // get all normal data and put in an array
+    std::vector<cy::Vec3f> stArray;
     for (int i = 0; i < mesh.NF(); i++) 
     {
         // Texture Face
         cyTriMesh::TriFace stFace = mesh.FT(i);
-        stArray[i * 3 + 0] = mesh.VT(stFace.v[0]);
-        stArray[i * 3 + 1] = mesh.VT(stFace.v[1]);
-        stArray[i * 3 + 2] = mesh.VT(stFace.v[2]);
+        stArray.push_back(mesh.VT(stFace.v[0]));
+        stArray.push_back(mesh.VT(stFace.v[1]));
+        stArray.push_back(mesh.VT(stFace.v[2]));
     }
 
     GLuint tex0;
@@ -392,7 +394,9 @@ int main(int argc, char** argv)
 
     GLuint normal = prog.AttribLocation("normal");
     glEnableVertexAttribArray(normal);
-    glVertexAttribPointer(normal, 3, GL_FLOAT, GL_FALSE, 0, (GLvoid*)0);
+    glVertexAttribPointer(
+        normal, 3, GL_FLOAT, 
+        GL_FALSE, 0, (GLvoid*)0);
 
     // texture buffer
     GLuint textureBuffer;
