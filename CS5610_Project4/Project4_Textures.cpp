@@ -333,7 +333,7 @@ int main(int argc, char** argv)
     
     prog["tex0"] = 0;
 
-    /*
+    //*
     // specular texture
     GLuint tex1;
     glGenTextures(1, &tex1);
