@@ -163,7 +163,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CS5610_Project5.cpp" />
+    <ClCompile Include="Project5_RenderBuffers.cpp" />
     <ClCompile Include="lodepng.cpp" />
   </ItemGroup>
   <ItemGroup>
