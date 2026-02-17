@@ -53,6 +53,9 @@ void Display()
 
     // draw the teapot
     glDrawArrays(GL_TRIANGLES, 0, num_face);
+
+
+
     glutSwapBuffers();
 }
 
@@ -164,7 +167,8 @@ void Keyboard(unsigned char key, int x, int y)
     }
 
     // use key a to rerendering 
-    if (key == 97) {
+    if (key == 97) 
+    {
         if (prog.BuildFiles("shader.vert", "shader.frag"))
         {
             prog.Bind();
@@ -317,7 +321,6 @@ int main(int argc, char** argv)
     unsigned imageWidth, imageHeight;
     lodepng::decode(image_data, imageWidth, imageHeight, kd);
 
-
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, imageWidth, imageHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data.data());
 
     // Generate MipMap Level
@@ -341,7 +344,6 @@ int main(int argc, char** argv)
     glActiveTexture(GL_TEXTURE1);
     glBindTexture(GL_TEXTURE_2D, tex1);
 
-
     std::string ks = material.map_Ks.data;
 
     //load texture image
@@ -350,8 +352,6 @@ int main(int argc, char** argv)
     lodepng::decode(spec_data, specWidth, specHeight, ks);
 
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, specWidth, specHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, spec_data.data());
-
-
 
     // Generate MipMap Level
     glGenerateMipmap(GL_TEXTURE_2D);
